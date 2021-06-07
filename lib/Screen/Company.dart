@@ -1,12 +1,16 @@
+import 'package:assinment/GetxHelper/CompanyController.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 class CompanyVeiw extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+     final Companycontroller =  Get.put(CompanyController());
+    
     return 
     
       Scaffold(
         appBar: AppBar(
+          leading: Text(''),
           title: Text('ComPany Detail'),
 
         ),
@@ -17,24 +21,38 @@ class CompanyVeiw extends StatelessWidget {
           return Expanded(
           child: Container(
             //height: 500,
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(5),
             child:   Column(
                    
                      children: [
-                       Container( 
-                         height: 60,
-                         alignment: Alignment.center,
-                         width: 300,
-                         color: Colors.black,
-                         child: Icon(
-                           
-                            Icons.circle , 
-                         size: 70.0,
-                         color: Colors.red,
-             
-                      ),
+                       Stack(
                          
-                       ),
+                        children: [
+                          Container( 
+                           height: 50,
+                           alignment: Alignment.center,
+                           width: 300,
+                           color: Colors.black,
+                           
+                          ),
+                          Padding(
+                             padding: EdgeInsets.only(top: 20,left: 50),
+                            child: CircleAvatar(
+                              radius: 35.0,
+  backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3B3g1ZYUcGKdtulighGvGNR7zVaZCLtDIkpvdxOf2K1Vf6mYxomKa1DZVQ9hh5upDK3Hq6XJERquYwg&usqp=CAU'),
+
+),
+                                   )      
+                                ],
+                              ),
+                           
+
+                           
+             
+                      
+                      
+                         
+                       
                      SizedBox(height: 15,),
                         Text('3.5*' ,
                   style: TextStyle(
@@ -148,8 +166,8 @@ class CompanyVeiw extends StatelessWidget {
         },
   primary: false,
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-    crossAxisSpacing: 10,
-  mainAxisSpacing: 20,
+    crossAxisSpacing: 8,
+  mainAxisSpacing: 15,
   crossAxisCount: 2,
   childAspectRatio:  
            MediaQuery.of(context).size.width/MediaQuery.of(context).size.height,
@@ -160,12 +178,7 @@ class CompanyVeiw extends StatelessWidget {
   
   
 ),
-      
-      
-      
-      
-      
-      );
+  );
 
   }
 }

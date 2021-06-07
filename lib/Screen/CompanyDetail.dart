@@ -1,13 +1,16 @@
+import 'package:assinment/GetxHelper/CompanyDetail.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 class CompanyDetail extends StatelessWidget {
   
 
   @override
   Widget build(BuildContext context) {
+      final Companycontroller =  Get.put(CompanyDetailController());
     return Scaffold(
       appBar: AppBar(
-        title: Text('Company Detail'),
+        leading: Text(''),
+        title: Text('Company Information '),
       ),
       body:
         SingleChildScrollView(
@@ -21,7 +24,7 @@ class CompanyDetail extends StatelessWidget {
                  width:  MediaQuery.of(context).size.width ,
                  height: 200,
                  color: Colors.black, 
-                 child: Image.network('src'),
+                 child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwirC_hO33YuMeVyKRaRlaumrHdkALbpkq5_WFKL1p3f8PWFK_cvrk6bPcaJE0PE_DOqo&usqp=CAU'),
                  
                 ),
                 Row(
@@ -30,9 +33,14 @@ class CompanyDetail extends StatelessWidget {
                    
                    Container(
                     
-                                  child: Icon(Icons.circle , 
-                               size: 70.0,
-                               color: Colors.blue,),
+                                  child:  Padding(
+                             padding: EdgeInsets.all(8),
+                            child: CircleAvatar(
+                              radius: 35.0,
+  backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3B3g1ZYUcGKdtulighGvGNR7zVaZCLtDIkpvdxOf2K1Vf6mYxomKa1DZVQ9hh5upDK3Hq6XJERquYwg&usqp=CAU'),
+
+),
+                                  )                
                    ),
                    Text('Company Name ' ,
                    style: TextStyle(
@@ -44,6 +52,7 @@ class CompanyDetail extends StatelessWidget {
                    Divider(),],),
 
                   Container(
+                     padding:EdgeInsets.all(10) ,
                     width: MediaQuery.of(context).size.width,
                     child: Row(
                       
@@ -123,7 +132,7 @@ class CompanyDetail extends StatelessWidget {
                   ),
 SizedBox(height: 30,),
                Container(
-               
+               padding:EdgeInsets.all(10) ,
               width: MediaQuery.of(context).size.width,
                           child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -174,6 +183,7 @@ SizedBox(height: 30,),
                ),
                
     Container(
+       padding:EdgeInsets.all(10) ,
                  width: MediaQuery.of(context).size.width,
                  child: Column(
                    mainAxisAlignment: MainAxisAlignment.start,

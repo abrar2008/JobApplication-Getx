@@ -6,6 +6,7 @@ class SaveJob extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
   appBar: AppBar(
+    leading: Text(''),
     title: Text('Save Jobs '),
      
   ), 
